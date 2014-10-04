@@ -1,0 +1,8 @@
+<p>
+  <h1><%= @film.name %></h1>
+  <strong>Описание:</strong>
+  <%= @film.description %><br>
+</p>
+
+<%= link_to 'Назад', films_path %>
+<%= link_to 'Редактировать', edit_film_path(@film) %>

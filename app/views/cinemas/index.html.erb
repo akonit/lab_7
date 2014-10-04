@@ -1,0 +1,26 @@
+<h1>Все кинотеатры</h1>
+<%= link_to 'Перейти к просмотру фильмов', films_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Перейти к просмотру сеансов', sessions_path %><br><br>
+ 
+<%= link_to 'Создать кинотеатр', new_cinema_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Поиск по кинотеатрам', search_by_cinema_path %><br><br>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Описание</th>
+    <th>Адрес</th>
+  </tr>
+ 
+  <% @cinemas.each do |cinema| %>
+    <tr>
+      <td><%= cinema.name %></td>
+      <td><%= cinema.description %></td>
+      <td><%= cinema.address %></td>
+      <td><%= link_to 'Просмотреть', cinema_path(cinema) %></td>
+      <td><%= link_to 'Редактировать', edit_cinema_path(cinema) %></td>
+      <td><%= link_to 'Удалить', cinema_path(cinema),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>

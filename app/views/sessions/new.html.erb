@@ -1,0 +1,30 @@
+<h1>Добавить сеанс</h1>
+
+<%= form_for :session, url: sessions_path do |f| %>
+
+  <p>
+    <%= f.label :фильм %><br>
+    <%= f.select :film_id, options_for_select(Film.all.collect{ |c| [c.name, c.id] }) %>
+  </p>
+
+  <p>
+    <%= f.label :кинотеатр %><br>
+    <%= f.select :cinema_id, options_for_select(Cinema.all.collect{ |c| [c.name, c.id] }) %><br>
+  </p>
+
+  <p>
+    <%= f.label :начало_сеанса %><br>
+    <%= f.text_field :start, placeholder: "YYYY-MM-DD hh:mm:ss" %>
+  </p>
+ 
+  <p>
+    <%= f.label :окончание_сеанса %><br>
+    <%= f.text_field :end, placeholder: "YYYY-MM-DD hh:mm:ss" %>
+  </p>
+  
+  <p>
+    <%= f.submit :сохранить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', sessions_path %>

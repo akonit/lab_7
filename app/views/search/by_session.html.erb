@@ -1,0 +1,12 @@
+<h1>Поиск по сеансам </h1>
+<%= link_to 'Перейти к просмотру сеансов', sessions_path %><br><br>
+
+<%= form_tag(search_by_session_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+    <div class="input-append">
+        <%= datetime_field_tag :from, params[:from], class: "span2", 
+            placeholder: "YYYY-MM-DD hh:mm:ss"%>
+        <%= datetime_field_tag :to, params[:to], class: "span2", 
+            placeholder: "YYYY-MM-DD hh:mm:ss"%>
+        <%= submit_tag "Искать", :name => nil %>
+    </div>
+<% end %>

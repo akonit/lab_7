@@ -1,0 +1,10 @@
+<h1>Поиск по кинотеатрам </h1>
+<%= link_to 'Перейти к просмотру кинотеатров', cinemas_path %><br><br>
+
+<%= form_tag(search_by_cinema_result_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+    <div class="input-append">
+        <%= text_field_tag :search, params[:search], class: "span2", 
+            placeholder: "Введите название кинотеатра"%>
+        <%= submit_tag "Искать", :name => nil %>
+    </div>
+<% end %>

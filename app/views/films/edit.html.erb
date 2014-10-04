@@ -1,0 +1,19 @@
+<h1>Редактирование фильма</h1>
+ 
+<%= form_for :film, url: film_path(@film), method: :patch do |f| %>
+  <p>
+    <%= f.label :название %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :описание %><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= f.submit :обновить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', films_path %>

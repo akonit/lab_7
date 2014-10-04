@@ -1,0 +1,28 @@
+<h1>Все сеансы</h1>
+<%= link_to 'Перейти к просмотру кинотеатров', cinemas_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Перейти к просмотру фильмов', films_path %><br><br>
+ 
+<%= link_to 'Создать сеанс', new_session_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Поиск по сеансам', search_by_session_path %><br><br>
+
+<table>
+  <tr>
+    <th>Название фильма</th>
+    <th>Название кинотеатра</th>
+    <th>Начало сеанса</th>
+    <th>Окончание сеанса</th>
+  </tr>
+
+  <% @sessions.each do |session| %>
+    <tr>
+      <td><%= session.film.name %></td>
+      <td><%= session.cinema.name %></td>
+      <td><%= session.start %></td>
+      <td><%= session.end %></td>
+      <td><%= link_to 'Просмотреть', session_path(session) %></td>
+      <td><%= link_to 'Редактировать', edit_session_path(session) %></td>
+      <td><%= link_to 'Удалить', session_path(session),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>

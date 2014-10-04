@@ -1,0 +1,21 @@
+<h1>Результат поиска</h1>
+<%= link_to 'Перейти к просмотру фильмов', films_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Перейти к поиску по фильмам', search_by_film_path %><br><br>
+
+<h4><%= @film.name %><br>
+<%= @film.description %><br><br></h4>
+<table>
+  <tr>
+    <th>Название кинотеатра</th>
+    <th>Начало сеанса</th>
+    <th>Окончание сеанса</th>
+  </tr>
+ 
+  <% @sessions.each do |session| %>
+    <tr>
+      <td><%= session.cinema.name %></td>
+      <td><%= session.start %></td>
+      <td><%= session.end %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,20 @@
+<h1>Редактирование сеанса</h1>
+<h1><%= @film.name %> ( <%= @cinema.name %> )</h1>
+ 
+<%= form_for :session, url: session_path(@session), method: :patch do |f| %>
+  <p>
+    <%= f.label :начало_сеанса %><br>
+    <%= f.text_field :start, placeholder: "YYYY-MM-DD hh:mm:ss" %>
+  </p>
+ 
+  <p>
+    <%= f.label :окончание_сеанса %><br>
+    <%= f.text_field :end, placeholder: "YYYY-MM-DD hh:mm:ss" %>
+  </p>
+ 
+  <p>
+    <%= f.submit :обновить%>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', sessions_path %>

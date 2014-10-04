@@ -1,0 +1,10 @@
+<p>
+  <h1><%= @film.name %> ( <%= @cinema.name %> )</h1>
+  <strong>Начало сеанса:</strong>
+  <%= @session.start %><br>
+  <strong>Окончание сеанса:</strong>
+  <%= @session.end %><br>
+</p>
+
+<%= link_to 'Назад', sessions_path %>
+<%= link_to 'Редактировать', edit_session_path(@session) %>

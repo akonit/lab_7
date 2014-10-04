@@ -1,0 +1,24 @@
+<h1>Все фильмы</h1>
+<%= link_to 'Перейти к просмотру кинотеатров', cinemas_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Перейти к просмотру сеансов', sessions_path %><br><br>
+ 
+<%= link_to 'Создать фильм', new_film_path %>
+&nbsp;&nbsp;&nbsp;<%= link_to 'Поиск по фильму', search_by_film_path %><br><br>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Описание</th>
+  </tr>
+ 
+  <% @films.each do |film| %>
+    <tr>
+      <td><%= film.name %></td>
+      <td><%= film.description %></td>
+      <td><%= link_to 'Просмотреть', film_path(film) %></td>
+      <td><%= link_to 'Редактировать', edit_film_path(film) %></td>
+      <td><%= link_to 'Удалить', film_path(film),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>

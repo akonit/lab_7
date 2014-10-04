@@ -1,0 +1,10 @@
+<p>
+  <h1><%= @cinema.name %></h1>
+  <strong>Описание:</strong>
+  <%= @cinema.description %><br>
+  <strong>Адрес:</strong>
+  <%= @cinema.address %><br>
+</p>
+
+<%= link_to 'Назад', cinemas_path %>
+<%= link_to 'Редактировать', edit_cinema_path(@cinema) %>
