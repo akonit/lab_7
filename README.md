@@ -16,6 +16,7 @@
 
   ```
   git clone https://github.com/akonit/lab_7.git
+  ```
 2. Перейти в директорию проекта:
 
   ```
